@@ -43,11 +43,9 @@ for (const tab of tabs) {
 }
 document.querySelector('ul').append(...elements);
 
-const button = document.querySelector('button');
-button.addEventListener('click', async () => {
-  const tabIds = tabs.map(({ id }) => id);
-  if (tabIds.length) {
-    const group = await chrome.tabs.group({ tabIds });
-    await chrome.tabGroups.update(group, { title: 'DOCS' });
-  }
-});
+var button = document.getElementById('button');
+button.addEventListener('click', change);
+function change() {
+  var example = document.getElementById("example");
+  example.innerHTML = "WORKS";
+}
